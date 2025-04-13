@@ -644,21 +644,21 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link" onclick="showTab('blog')">
-                            <i class="fas fa-blog"></i>
-                            <span>네이버 블로그</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a href="#" class="nav-link" onclick="showTab('search')">
                             <i class="fas fa-search"></i>
                             <span>네이버 상위노출 현황</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" onclick="showTab('social')">
-                            <i class="fas fa-share-alt"></i>
-                            <span>소셜 미디어</span>
+                        <a href="#" class="nav-link" onclick="showTab('meta')">
+                            <i class="fab fa-facebook"></i>
+                            <span>메타 광고</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="showTab('karrot')">
+                            <i class="fas fa-carrot"></i>
+                            <span>당근마켓</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -781,12 +781,6 @@
                                     </a>
                                 </li>
                                 <li class="link-item">
-                                    <a href="https://blog.naver.com/pungnyeon_official" target="_blank" class="link-button">
-                                        <i class="fab fa-blogger-b"></i>
-                                        네이버 블로그 바로가기
-                                    </a>
-                                </li>
-                                <li class="link-item">
                                     <a href="https://docs.google.com/spreadsheets/d/1jBy_zts031a3-FmRK1SKOhFHO06Do9YVXXgtyr3eUPo/edit?gid=1900631716#gid=1900631716" target="_blank" class="link-button">
                                         <i class="fas fa-newspaper"></i>
                                         파워컨텐츠 소재 바로가기
@@ -890,7 +884,6 @@
                 <div class="tab-container">
                     <div class="tab-buttons">
                         <button class="tab-button active" onclick="openInnerTab(event, 'instagram')">인스타그램</button>
-                        <button class="tab-button" onclick="openInnerTab(event, 'naverBlog')">네이버 블로그</button>
                         <button class="tab-button" onclick="openInnerTab(event, 'youtube')">유튜브 채널</button>
                     </div>
                     
@@ -906,62 +899,19 @@
                                 <li class="link-item">
                                     <a href="https://www.instagram.com/pungnyeon_official" target="_blank" class="link-button">
                                         <i class="fab fa-instagram"></i>
-                                        인스타그램 공식 계정 바로가기
+                                        인스타그램 바로가기
                                     </a>
                                 </li>
                                 <li class="link-item">
-                                    <a href="https://docs.google.com/spreadsheets/d/1wjKugvEtwVqVODdETOizJlX9AkbnNU5gbWyece3xj1g/edit?gid=120812532#gid=120812532" target="_blank" class="link-button">
-                                        <i class="fas fa-images"></i>
-                                        메타 광고 소재 파일 정리 시트
-                                    </a>
-                                </li>
-                                <li class="link-item">
-                                    <a href="#" target="_blank" class="link-button">
-                                        <i class="fas fa-chart-line"></i>
-                                        메타 광고 성과 분석 대시보드
-                                    </a>
-                                </li>
-                                <li class="link-item">
-                                    <a href="#" target="_blank" class="link-button">
-                                        <i class="fas fa-calendar-alt"></i>
-                                        메타 광고 콘텐츠 일정
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div id="naverBlog" class="tab-content">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    <i class="fab fa-blogger-b"></i>
-                                    네이버 블로그 관리
-                                </h3>
-                            </div>
-                            <ul class="link-list">
-                                <li class="link-item">
-                                    <a href="https://blog.naver.com/pungnyeon_official" target="_blank" class="link-button">
-                                        <i class="fab fa-blogger-b"></i>
-                                        네이버 블로그 바로가기
+                                    <a href="https://docs.google.com/spreadsheets/d/1wjKugvEtwVqVODdETOizJlX9AkbnNU5gbWyece3xj1g/edit?gid=120812532#gid=120812532" class="link-button">
+                                        <i class="fas fa-image"></i>
+                                        메타 광고 소재 시트
                                     </a>
                                 </li>
                                 <li class="link-item">
                                     <a href="https://docs.google.com/spreadsheets/d/1jBy_zts031a3-FmRK1SKOhFHO06Do9YVXXgtyr3eUPo/edit?gid=1900631716#gid=1900631716" target="_blank" class="link-button">
                                         <i class="fas fa-newspaper"></i>
                                         파워컨텐츠 소재 바로가기
-                                    </a>
-                                </li>
-                                <li class="link-item">
-                                    <a href="https://docs.google.com/spreadsheets/d/1jBy_zts031a3-FmRK1SKOhFHO06Do9YVXXgtyr3eUPo/edit?gid=1900631716#gid=1900631716" target="_blank" class="link-button">
-                                        <i class="fas fa-chart-bar"></i>
-                                        파워컨텐츠별 성과 바로가기
-                                    </a>
-                                </li>
-                                <li class="link-item">
-                                    <a href="https://docs.google.com/document/d/1KK6msNRsku-nWLpZd9mWznU0cPVBExujl7pytngCZgw/edit?tab=t.0" target="_blank" class="link-button">
-                                        <i class="fas fa-edit"></i>
-                                        블로그 콘텐츠 작성 가이드
                                     </a>
                                 </li>
                             </ul>
@@ -1007,54 +957,134 @@
                 </div>
             </div>
 
-            <!-- Blog Tab -->
-            <div id="blog" class="tab-content">
-                <div class="dashboard-header">
-                    <h2 class="page-title">네이버 블로그 배포</h2>
-                </div>
-                
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">
-                            <i class="fas fa-blog"></i>
-                            네이버 블로그 배포 관리
-                        </h3>
-                    </div>
-                    <ul class="link-list">
-                        <li class="link-item">
-                            <a href="https://blog.naver.com/pungnyeon_official" target="_blank" class="link-button">
-                                <i class="fas fa-key"></i>
-                                공식 블로그 바로 가기
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
             <!-- Search Tab -->
             <div id="search" class="tab-content">
                 <div class="dashboard-header">
                     <h2 class="page-title">네이버 상위노출 현황</h2>
                 </div>
                 
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" onclick="openInnerTab(event, 'website')">웹사이트 상위노출</button>
+                        <button class="tab-button" onclick="openInnerTab(event, 'blogRank')">블로그 상위노출</button>
+                    </div>
+                    
+                    <div id="website" class="tab-content active">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-globe"></i>
+                                    웹사이트 상위노출 현황
+                                </h3>
+                            </div>
+                            <ul class="link-list">
+                                <li class="link-item">
+                                    <a href="https://docs.google.com/spreadsheets/d/1_mTHheLd5kEATSEdDwpznahyLNBAoayAxnyjR7uuc7M/edit?usp=sharing" target="_blank" class="link-button">
+                                        <i class="fas fa-chart-line"></i>
+                                        웹사이트 상위노출 현황 보고서
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div id="blogRank" class="tab-content">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-blog"></i>
+                                    블로그 상위노출 현황
+                                </h3>
+                            </div>
+                            <ul class="link-list">
+                                <li class="link-item">
+                                    <a href="https://docs.google.com/spreadsheets/d/1ZpEqNSDaPbMbzVcJlG2v-kxcbEbFErg-LqcPNcZfxHU/edit?gid=1459540033#gid=1459540033" target="_blank" class="link-button">
+                                        <i class="fas fa-chart-bar"></i>
+                                        블로그 상위노출 현황 보고서
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meta Ad Tab -->
+            <div id="meta" class="tab-content">
+                <div class="dashboard-header">
+                    <h2 class="page-title">메타 광고</h2>
+                </div>
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">
-                            <i class="fas fa-search"></i>
-                            검색 노출 현황
+                            <i class="fab fa-facebook"></i>
+                            메타 광고 관리
                         </h3>
                     </div>
                     <ul class="link-list">
                         <li class="link-item">
-                            <a href="https://docs.google.com/spreadsheets/d/1_mTHheLd5kEATSEdDwpznahyLNBAoayAxnyjR7uuc7M/edit?usp=sharing" target="_blank" class="link-button">
-                                <i class="fas fa-globe"></i>
-                                웹사이트 상위노출 현황
+                            <a href="https://docs.google.com/spreadsheets/d/1wjKugvEtwVqVODdETOizJlX9AkbnNU5gbWyece3xj1g/edit?gid=120812532#gid=120812532" target="_blank" class="link-button">
+                                <i class="fas fa-images"></i>
+                                메타 광고소재 바로가기
                             </a>
                         </li>
                         <li class="link-item">
-                            <a href="https://docs.google.com/spreadsheets/d/1ZpEqNSDaPbMbzVcJlG2v-kxcbEbFErg-LqcPNcZfxHU/edit?gid=1459540033#gid=1459540033" target="_blank" class="link-button">
-                                <i class="fas fa-blog"></i>
-                                블로그 상위노출 현황
+                            <a href="https://docs.google.com/spreadsheets/d/1wjKugvEtwVqVODdETOizJlX9AkbnNU5gbWyece3xj1g/edit?gid=120812532#gid=120812532" target="_blank" class="link-button">
+                                <i class="fas fa-chart-bar"></i>
+                                메타 광고현황 바로가기
+                            </a>
+                        </li>
+                        <li class="link-item">
+                            <a href="#" target="_blank" class="link-button">
+                                <i class="fas fa-user-friends"></i>
+                                타겟팅 설정 관리
+                            </a>
+                        </li>
+                        <li class="link-item">
+                            <a href="#" target="_blank" class="link-button">
+                                <i class="fas fa-money-bill-wave"></i>
+                                광고 예산 관리
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Karrot Tab -->
+            <div id="karrot" class="tab-content">
+                <div class="dashboard-header">
+                    <h2 class="page-title">당근마켓</h2>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-carrot"></i>
+                            당근마켓 관리
+                        </h3>
+                    </div>
+                    <ul class="link-list">
+                        <li class="link-item">
+                            <a href="#" target="_blank" class="link-button">
+                                <i class="fas fa-store"></i>
+                                당근마켓 채널 바로가기
+                            </a>
+                        </li>
+                        <li class="link-item">
+                            <a href="#" target="_blank" class="link-button">
+                                <i class="fas fa-images"></i>
+                                당근마켓 광고 소재 바로가기
+                            </a>
+                        </li>
+                        <li class="link-item">
+                            <a href="#" target="_blank" class="link-button">
+                                <i class="fas fa-chart-line"></i>
+                                당근마켓 광고 현황 바로가기
+                            </a>
+                        </li>
+                        <li class="link-item">
+                            <a href="#" target="_blank" class="link-button">
+                                <i class="fas fa-comment-dots"></i>
+                                당근마켓 고객 상담 현황
                             </a>
                         </li>
                     </ul>
@@ -1066,86 +1096,27 @@
                 <div class="dashboard-header">
                     <h2 class="page-title">소셜 미디어</h2>
                 </div>
-                
-                <div class="tab-container">
-                    <div class="tab-buttons">
-                        <button class="tab-button active" onclick="openInnerTab(event, 'meta')">메타 광고</button>
-                        <button class="tab-button" onclick="openInnerTab(event, 'karrot')">당근마켓</button>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-share-alt"></i>
+                            소셜 미디어 현황
+                        </h3>
                     </div>
-                    
-                    <div id="meta" class="tab-content active">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    <i class="fab fa-facebook"></i>
-                                    메타 광고 관리
-                                </h3>
-                            </div>
-                            <ul class="link-list">
-                                <li class="link-item">
-                                    <a href="https://docs.google.com/spreadsheets/d/1wjKugvEtwVqVODdETOizJlX9AkbnNU5gbWyece3xj1g/edit?gid=120812532#gid=120812532" target="_blank" class="link-button">
-                                        <i class="fas fa-images"></i>
-                                        메타 광고소재 바로가기
-                                    </a>
-                                </li>
-                                <li class="link-item">
-                                    <a href="https://docs.google.com/spreadsheets/d/1wjKugvEtwVqVODdETOizJlX9AkbnNU5gbWyece3xj1g/edit?gid=120812532#gid=120812532" target="_blank" class="link-button">
-                                        <i class="fas fa-chart-bar"></i>
-                                        메타 광고현황 바로가기
-                                    </a>
-                                </li>
-                                <li class="link-item">
-                                    <a href="#" target="_blank" class="link-button">
-                                        <i class="fas fa-user-friends"></i>
-                                        타겟팅 설정 관리
-                                    </a>
-                                </li>
-                                <li class="link-item">
-                                    <a href="#" target="_blank" class="link-button">
-                                        <i class="fas fa-money-bill-wave"></i>
-                                        광고 예산 관리
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div id="karrot" class="tab-content">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    <i class="fas fa-carrot"></i>
-                                    당근마켓 관리
-                                </h3>
-                            </div>
-                            <ul class="link-list">
-                                <li class="link-item">
-                                    <a href="#" target="_blank" class="link-button">
-                                        <i class="fas fa-store"></i>
-                                        당근마켓 채널 바로가기
-                                    </a>
-                                </li>
-                                <li class="link-item">
-                                    <a href="#" target="_blank" class="link-button">
-                                        <i class="fas fa-images"></i>
-                                        당근마켓 광고 소재 바로가기
-                                    </a>
-                                </li>
-                                <li class="link-item">
-                                    <a href="#" target="_blank" class="link-button">
-                                        <i class="fas fa-chart-line"></i>
-                                        당근마켓 광고 현황 바로가기
-                                    </a>
-                                </li>
-                                <li class="link-item">
-                                    <a href="#" target="_blank" class="link-button">
-                                        <i class="fas fa-comment-dots"></i>
-                                        당근마켓 고객 상담 현황
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <ul class="link-list">
+                        <li class="link-item">
+                            <a href="https://www.instagram.com/pungnyeon_official" target="_blank" class="link-button">
+                                <i class="fab fa-instagram"></i>
+                                인스타그램 바로가기
+                            </a>
+                        </li>
+                        <li class="link-item">
+                            <a href="#" target="_blank" class="link-button">
+                                <i class="fab fa-youtube"></i>
+                                유튜브 채널 바로가기
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
