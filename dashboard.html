@@ -677,6 +677,12 @@
                             <span>풍년식당 회의록</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="openFeedbackForm()">
+                            <i class="fas fa-comment-dots"></i>
+                            <span>의견 보내기</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </aside>
@@ -1466,6 +1472,47 @@
         </div>
     </div>
 
+    <!-- 간편 의견 보내기 모달 -->
+    <div id="feedbackModal" class="modal-overlay">
+        <div class="modal" style="max-width: 500px;">
+            <div class="modal-header">
+                <h3 class="modal-title">간편 의견 보내기</h3>
+                <button class="close-button" onclick="closeFeedbackModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="feedbackForm" onsubmit="submitFeedback(event)">
+                    <div style="margin-bottom: 15px;">
+                        <label for="feedbackName" style="display: block; margin-bottom: 5px; font-weight: 500;">성함</label>
+                        <select id="feedbackName" name="name" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ddd;" required>
+                            <option value="">선택해주세요</option>
+                            <option value="한경민">한경민</option>
+                            <option value="송기섭">송기섭</option>
+                            <option value="김동규">김동규</option>
+                            <option value="정찬재">정찬재 (운영실장)</option>
+                            <option value="김민수">김민수 (영업본부장, 점포개발)</option>
+                            <option value="황진희">황진희 (브랜딩/디자인)</option>
+                            <option value="임승은">임승은 (물류/구매)</option>
+                            <option value="황수한">황수한 (디지털마케팅)</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="feedbackContent" style="display: block; margin-bottom: 5px; font-weight: 500;">의견</label>
+                        <textarea id="feedbackContent" name="content" style="width: 100%; height: 120px; padding: 10px; border-radius: 4px; border: 1px solid #ddd;" placeholder="의견을 자유롭게 작성해주세요" required></textarea>
+                    </div>
+                    
+                    <div id="feedbackMessage" style="margin-bottom: 15px; color: green; display: none;">
+                        의견이 성공적으로 전송되었습니다!
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeFeedbackModal()">취소</button>
+                <button class="btn btn-primary" onclick="submitFeedback(event)">전송하기</button>
+            </div>
+        </div>
+    </div>
+
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
         // Google Sheets API 설정
@@ -1693,128 +1740,53 @@
             }
         }
 
-        // 타임라인 데이터 가져오기
-        function fetchTimelineData() {
-            // 웹에 게시된 CSV URL (실제 URL로 교체하세요)
-            const publishedUrl = "여기에_웹에_게시된_URL_입력";
-            
-            fetch(publishedUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(csvData => {
-                    const timelineData = parseTimelineCSV(csvData);
-                    updateAllTimelines(timelineData);
-                })
-                .catch(error => {
-                    console.error('타임라인 데이터 가져오기 오류:', error);
-                    // 오류 시 기본 데이터 사용
-                    const fallbackData = [
-                        {
-                            date: "2025년 4월 14~ 15일",
-                            title: "1단계: 준비 및 설정",
-                            status: "완료",
-                            description: "광고 계정 설정, 키워드 분석, 광고 소재 제작 및 브랜드 채널 최적화 작업을 완료했습니다."
-                        },
-                        {
-                            date: "2025년 4월 3주차",
-                            title: "2단계: 초기 광고 집행",
-                            status: "진행 중",
-                            description: "네이버 광고 집행, 메타 광고 1차 집행, 브랜드 채널 콘텐츠 정기 발행을 진행하고 있습니다."
-                        },
-                        {
-                            date: "2025년 4월 4주차",
-                            title: "3단계: 확장 및 최적화",
-                            status: "예정",
-                            description: "1-2단계 성과 분석, 전략 조정, 고성과 채널 예산 확대, 추가 옵션 검토 및 집행을 진행할 예정입니다."
-                        },
-                        {
-                            date: "2025년 4월 5주차",
-                            title: "4단계: 마무리 및 평가",
-                            status: "예정",
-                            description: "최종 성과 측정 및 분석, 가맹 계약 마무리, 결과 보고서 작성을 진행할 예정입니다."
-                        }
-                    ];
-                    updateAllTimelines(fallbackData);
-                });
+        // 간편 의견 보내기 관련 함수
+        function openFeedbackForm() {
+            document.getElementById('feedbackModal').style.display = 'flex';
+            document.getElementById('feedbackMessage').style.display = 'none';
+            document.getElementById('feedbackForm').reset();
         }
 
-        // CSV 파싱 함수
-        function parseTimelineCSV(csvText) {
-            const lines = csvText.trim().split('\n');
-            const result = [];
-            
-            // 첫 번째 행은 헤더이므로 건너뛰기
-            for (let i = 1; i < lines.length; i++) {
-                const values = lines[i].split(',');
-                if (values.length >= 4) {
-                    result.push({
-                        date: values[0] || '',
-                        title: values[1] || '',
-                        status: values[2] || '',
-                        description: values[3] || ''
-                    });
-                }
-            }
-            
-            return result;
+        function closeFeedbackModal() {
+            document.getElementById('feedbackModal').style.display = 'none';
         }
 
-        // 모든 타임라인 섹션 업데이트
-        function updateAllTimelines(timelineData) {
-            // 대시보드 타임라인 업데이트
-            updateTimelineSection('#dashboard .timeline', timelineData);
+        function submitFeedback(event) {
+            event.preventDefault();
             
-            // 일정관리 타임라인 업데이트 
-            updateTimelineSection('#schedule .timeline', timelineData);
-        }
-
-        // 특정 타임라인 섹션 업데이트
-        function updateTimelineSection(selector, data) {
-            const timelineContainer = document.querySelector(selector);
-            if (!timelineContainer) {
-                console.warn(`타임라인 컨테이너를 찾을 수 없습니다: ${selector}`);
+            const name = document.getElementById('feedbackName').value;
+            const content = document.getElementById('feedbackContent').value;
+            
+            if (!name || !content) {
+                alert('성함과 의견을 모두 입력해주세요.');
                 return;
             }
             
-            let timelineHTML = '';
-            
-            data.forEach(item => {
-                let statusClass = '';
-                if (item.status === '완료') {
-                    statusClass = 'completed';
-                } else if (item.status === '진행 중') {
-                    statusClass = 'current';
-                } else if (item.status === '예정') {
-                    statusClass = 'upcoming';
-                }
-                
-                timelineHTML += `
-                    <div class="timeline-item">
-                        <div class="timeline-dot ${statusClass}"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">${item.date}</div>
-                            <h3 class="timeline-title">${item.title}</h3>
-                            <span class="status-badge ${statusClass}">${item.status}</span>
-                            <p>${item.description}</p>
-                        </div>
-                    </div>
-                `;
-            });
-            
-            timelineContainer.innerHTML = timelineHTML;
-        }
+            // 이메일 전송 형식 준비
+            const emailSubject = `[풍년식당 대시보드 의견] ${name}님의 의견`;
+            const emailBody = `
+보낸 사람: ${name}
 
-        // 페이지 로드 시 실행
-        document.addEventListener('DOMContentLoaded', function() {
-            fetchTimelineData();
+${content}
+
+---
+풍년식당1979 가맹 광고 프로젝트 대시보드에서 전송됨
+            `.trim();
             
-            // 5분마다 데이터 새로고침
-            setInterval(fetchTimelineData, 300000);
-        });
+            // mailto 링크 생성
+            const mailtoLink = `mailto:bestarmarketingworks@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // 이메일 클라이언트 열기
+            window.location.href = mailtoLink;
+            
+            // 성공 메시지 표시
+            document.getElementById('feedbackMessage').style.display = 'block';
+            
+            // 3초 후 폼 닫기
+            setTimeout(function() {
+                closeFeedbackModal();
+            }, 3000);
+        }
     </script>
 </body>
 </html>
