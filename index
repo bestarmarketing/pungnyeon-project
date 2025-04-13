@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>풍년식당1979 가맹 광고 프로젝트</title>
     <style>
-        /* 기존 CSS 코드는 그대로 유지 */
-        
-        /* h2 스타일 재정의 */
-        h2 {
-            margin-top: 100px !important; /* 강제 적용 */
-            color: #0288d1;
-            border-bottom: 2px solid #0288d1;
-            padding-bottom: 5px;
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
         }
+        
+        /* 여기에 원래 스타일 코드들... */
     </style>
 </head>
         body {
@@ -100,7 +100,7 @@
             <p><strong>프로젝트 기간:</strong> 2025년 4월 ~ 2025년 7월 (4개월)</p>
             <p><strong>목표:</strong> 선착순 10개 매장 계약 달성</p>
         </div>
-
+<br>
         <h2>목차</h2>
         <ol>
             <li><a href="#naver">네이버 광고 예산 관리</a></li>
@@ -111,7 +111,7 @@
             <li><a href="#schedule">프로젝트 일정</a></li>
             <li><a href="#team">프로젝트 팀</a></li>
         </ol>
-
+<br>
         <h2 id="naver">1. 네이버 광고 예산 관리</h2>
         <p>전체 네이버 광고 예산: <strong>5,600,000원</strong> (총 예산의 50.5%)</p>
         
@@ -216,7 +216,7 @@
             <li><strong>인스타그램:</strong> 비주얼 중심의 메뉴 사진, 매장 분위기, 고객 후기</li>
             <li><strong>유튜브:</strong> 점주 인터뷰, 매장 투어, 조리 과정 소개</li>
         </ul>
-
+<br>
         <h2 id="options">4. 추가 선택 옵션</h2>
         <p>필요에 따라 추가할 수 있는 선택 옵션입니다.</p>
         
@@ -256,7 +256,7 @@
                 <td><strong>100%</strong></td>
             </tr>
         </table>
-
+<br>
         <h2 id="schedule">6. 프로젝트 일정</h2>
         <p>4개월 간의 프로젝트 진행 일정입니다.</p>
         
@@ -297,7 +297,7 @@
                 </ul>
             </div>
         </div>
-
+<br>
         <h2 id="team">7. 프로젝트 팀</h2>
         <p>프로젝트를 진행할 핵심 팀원입니다.</p>
         
