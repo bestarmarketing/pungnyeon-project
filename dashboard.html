@@ -640,7 +640,7 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link" onclick="showTab('brand')">
                             <i class="fas fa-star"></i>
-                            <span>브랜드 관리</span>
+                            <span>브랜드 콘텐츠 통합 뷰</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -674,9 +674,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" onclick="showTab('settings')">
-                            <i class="fas fa-cog"></i>
-                            <span>설정</span>
+                        <a href="#" class="nav-link" onclick="showTab('meeting')">
+                            <i class="fas fa-file-alt"></i>
+                            <span>풍년식당 회의록</span>
                         </a>
                     </li>
                 </ul>
@@ -878,77 +878,133 @@
             <!-- Brand Management Tab -->
             <div id="brand" class="tab-content">
                 <div class="dashboard-header">
-                    <h2 class="page-title">브랜드 관리</h2>
+                    <h2 class="page-title">브랜드 콘텐츠 통합 뷰</h2>
                 </div>
                 
                 <div class="tab-container">
                     <div class="tab-buttons">
-                        <button class="tab-button active" onclick="openInnerTab(event, 'instagram')">인스타그램</button>
-                        <button class="tab-button" onclick="openInnerTab(event, 'youtube')">유튜브 채널</button>
+                        <button class="tab-button active" onclick="openInnerTab(event, 'official')">공식 홈페이지</button>
+                        <button class="tab-button" onclick="openInnerTab(event, 'blog')">공식 블로그</button>
+                        <button class="tab-button" onclick="openInnerTab(event, 'instagram')">공식 인스타그램</button>
+                        <button class="tab-button" onclick="openInnerTab(event, 'youtube')">공식 유튜브</button>
                     </div>
                     
-                    <div id="instagram" class="tab-content active">
+                    <!-- 1. 공식 홈페이지 탭 -->
+                    <div id="official" class="tab-content active">
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    <i class="fab fa-instagram"></i>
-                                    인스타그램 관리
+                                    <i class="fas fa-home"></i>
+                                    공식 홈페이지 관리
                                 </h3>
                             </div>
                             <ul class="link-list">
                                 <li class="link-item">
-                                    <a href="https://www.instagram.com/pungnyeon_official" target="_blank" class="link-button">
-                                        <i class="fab fa-instagram"></i>
-                                        인스타그램 바로가기
+                                    <a href="https://풍년식당.com" target="_blank" class="link-button">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        홈페이지 바로가기
                                     </a>
                                 </li>
                                 <li class="link-item">
-                                    <a href="https://docs.google.com/spreadsheets/d/1wjKugvEtwVqVODdETOizJlX9AkbnNU5gbWyece3xj1g/edit?gid=120812532#gid=120812532" class="link-button">
-                                        <i class="fas fa-image"></i>
-                                        메타 광고 소재 시트
-                                    </a>
-                                </li>
-                                <li class="link-item">
-                                    <a href="https://docs.google.com/spreadsheets/d/1jBy_zts031a3-FmRK1SKOhFHO06Do9YVXXgtyr3eUPo/edit?gid=1900631716#gid=1900631716" target="_blank" class="link-button">
-                                        <i class="fas fa-newspaper"></i>
-                                        파워컨텐츠 소재 바로가기
+                                    <a href="https://docs.google.com/spreadsheets/d/1NjrV7v01aSs5lzY41-iMoaWedFznRcIRlizsnz79aq0/edit?gid=1025869561#gid=1025869561" target="_blank" class="link-button">
+                                        <i class="fas fa-file-code"></i>
+                                        타이틀태그/메타디스크립션
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     
-                    <div id="youtube" class="tab-content">
+                    <!-- 2. 공식 블로그 탭 -->
+                    <div id="blog" class="tab-content">
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    <i class="fab fa-youtube"></i>
-                                    유튜브 채널 관리
+                                    <i class="fas fa-blog"></i>
+                                    공식 블로그 관리
                                 </h3>
                             </div>
                             <ul class="link-list">
                                 <li class="link-item">
-                                    <a href="#" target="_blank" class="link-button">
-                                        <i class="fab fa-youtube"></i>
-                                        유튜브 채널 바로가기
+                                    <a href="https://blog.naver.com/pungnyeon_official" target="_blank" class="link-button">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        공식 블로그 바로가기
                                     </a>
                                 </li>
                                 <li class="link-item">
-                                    <a href="#" target="_blank" class="link-button">
-                                        <i class="fas fa-chart-line"></i>
-                                        유튜브 채널 성과 바로가기
-                                    </a>
-                                </li>
-                                <li class="link-item">
-                                    <a href="#" target="_blank" class="link-button">
-                                        <i class="fas fa-file-video"></i>
-                                        영상 컨텐츠 기획안
+                                    <a href="https://docs.google.com/spreadsheets/d/1ZpEqNSDaPbMbzVcJlG2v-kxcbEbFErg-LqcPNcZfxHU/edit?gid=1459540033#gid=1459540033" target="_blank" class="link-button">
+                                        <i class="fas fa-upload"></i>
+                                        컨텐츠 업로드 현황
                                     </a>
                                 </li>
                                 <li class="link-item">
                                     <a href="#" target="_blank" class="link-button">
                                         <i class="fas fa-calendar-alt"></i>
-                                        영상 업로드 일정
+                                        업로드 예정 컨텐츠
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 3. 공식 인스타그램 탭 -->
+                    <div id="instagram" class="tab-content">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fab fa-instagram"></i>
+                                    공식 인스타그램 관리
+                                </h3>
+                            </div>
+                            <ul class="link-list">
+                                <li class="link-item">
+                                    <a href="https://www.instagram.com/pungnyeon_official" target="_blank" class="link-button">
+                                        <i class="fab fa-instagram"></i>
+                                        공식 인스타그램 바로가기
+                                    </a>
+                                </li>
+                                <li class="link-item">
+                                    <a href="https://docs.google.com/spreadsheets/d/1wjKugvEtwVqVODdETOizJlX9AkbnNU5gbWyece3xj1g/edit?gid=120812532#gid=120812532" class="link-button">
+                                        <i class="fas fa-upload"></i>
+                                        컨텐츠 업로드 현황
+                                    </a>
+                                </li>
+                                <li class="link-item">
+                                    <a href="#" target="_blank" class="link-button">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        업로드 예정 컨텐츠
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 4. 공식 유튜브 탭 -->
+                    <div id="youtube" class="tab-content">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fab fa-youtube"></i>
+                                    공식 유튜브 채널 관리
+                                </h3>
+                            </div>
+                            <ul class="link-list">
+                                <li class="link-item">
+                                    <a href="https://www.youtube.com/@풍년식당" target="_blank" class="link-button">
+                                        <i class="fab fa-youtube"></i>
+                                        공식 유튜브 채널 바로가기
+                                    </a>
+                                </li>
+                                <li class="link-item">
+                                    <a href="#" target="_blank" class="link-button">
+                                        <i class="fas fa-upload"></i>
+                                        컨텐츠 업로드 현황
+                                    </a>
+                                </li>
+                                <li class="link-item">
+                                    <a href="#" target="_blank" class="link-button">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        업로드 예정 컨텐츠
                                     </a>
                                 </li>
                             </ul>
@@ -1392,7 +1448,7 @@
         // Tab navigation
         function showTab(tabId) {
             // Hide all tabs
-            const tabContents = document.querySelectorAll('.tab-content');
+            const tabContents = document.querySelectorAll('.content > .tab-content');
             tabContents.forEach(tab => {
                 tab.classList.remove('active');
             });
@@ -1408,6 +1464,40 @@
                     link.classList.add('active');
                 }
             });
+            
+            // 특정 탭이 선택됐을 때 기본 내부 탭 활성화
+            if(tabId === 'brand') {
+                // 브랜드 콘텐츠 통합 뷰에서 '공식 홈페이지' 탭 활성화
+                const brandTabs = document.querySelectorAll('#brand .tab-content');
+                brandTabs.forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.getElementById('official').classList.add('active');
+                
+                // 탭 버튼 활성화
+                const brandTabButtons = document.querySelectorAll('#brand .tab-button');
+                brandTabButtons.forEach(button => {
+                    button.classList.remove('active');
+                });
+                // 첫 번째 탭 버튼(공식 홈페이지) 활성화
+                brandTabButtons[0].classList.add('active');
+            }
+            else if(tabId === 'search') {
+                // 네이버 상위노출 현황에서 '웹사이트 상위노출' 탭 활성화
+                const searchTabs = document.querySelectorAll('#search .tab-content');
+                searchTabs.forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.getElementById('website').classList.add('active');
+                
+                // 탭 버튼 활성화
+                const searchTabButtons = document.querySelectorAll('#search .tab-button');
+                searchTabButtons.forEach(button => {
+                    button.classList.remove('active');
+                });
+                // 첫 번째 탭 버튼(웹사이트 상위노출) 활성화
+                searchTabButtons[0].classList.add('active');
+            }
         }
         
         // Inner tabs
