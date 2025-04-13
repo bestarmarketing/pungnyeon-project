@@ -66,7 +66,6 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
         }
 
         .logo h1 {
@@ -74,8 +73,8 @@
             font-weight: 700;
         }
 
-        .logo-icon {
-            font-size: 2rem;
+        .logo i {
+            display: none;
         }
 
         .user-info {
@@ -616,13 +615,12 @@
     <!-- Header -->
     <header class="header">
      <div class="container header-flex">
-    <div class="logo">
-        <a href="https://bestarmarketing.github.io/pungnyeon-project/" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
-            <i class="fas fa-utensils logo-icon"></i>
-            <h1>풍년식당1979 가맹 광고 프로젝트</h1>
-        </a>
+        <div class="logo">
+            <a href="https://bestarmarketing.github.io/pungnyeon-project/" style="text-decoration: none; color: inherit;">
+                <h1>풍년식당1979 가맹 광고 프로젝트</h1>
+            </a>
+        </div>
     </div>
-</div>
     </header>
 
     <!-- Main Layout -->
@@ -769,21 +767,27 @@
                             </div>
                             <ul class="link-list">
                                 <li class="link-item">
+                                    <a href="https://풍년식당.com" target="_blank" class="link-button">
+                                        <i class="fas fa-home"></i>
+                                        홈페이지 바로가기
+                                    </a>
+                                </li>
+                                <li class="link-item">
                                     <a href="https://www.instagram.com/pungnyeon_official" target="_blank" class="link-button">
                                         <i class="fab fa-instagram"></i>
                                         인스타그램 바로가기
                                     </a>
                                 </li>
                                 <li class="link-item">
-                                    <a href="https://docs.google.com/spreadsheets/d/1wjKugvEtwVqVODdETOizJlX9AkbnNU5gbWyece3xj1g/edit?gid=120812532#gid=120812532" class="link-button">
-                                        <i class="fas fa-image"></i>
-                                        메타 광고 소재 시트
+                                    <a href="https://blog.naver.com/pungnyeon_official" target="_blank" class="link-button">
+                                        <i class="fas fa-blog"></i>
+                                        블로그 바로가기
                                     </a>
                                 </li>
                                 <li class="link-item">
-                                    <a href="https://docs.google.com/spreadsheets/d/1jBy_zts031a3-FmRK1SKOhFHO06Do9YVXXgtyr3eUPo/edit?gid=1900631716#gid=1900631716" target="_blank" class="link-button">
-                                        <i class="fas fa-newspaper"></i>
-                                        파워컨텐츠 소재 바로가기
+                                    <a href="https://www.youtube.com/@풍년식당" target="_blank" class="link-button">
+                                        <i class="fab fa-youtube"></i>
+                                        유튜브 채널 바로가기
                                     </a>
                                 </li>
                             </ul>
@@ -792,8 +796,8 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    <i class="fas fa-search"></i>
-                                    검색 & 소셜 미디어
+                                    <i class="fas fa-chart-bar"></i>
+                                    광고 매체별 리포트
                                 </h3>
                             </div>
                             <ul class="link-list">
@@ -804,21 +808,39 @@
                                     </a>
                                 </li>
                                 <li class="link-item">
+                                    <a href="https://docs.google.com/spreadsheets/d/1ZpEqNSDaPbMbzVcJlG2v-kxcbEbFErg-LqcPNcZfxHU/edit?gid=1459540033#gid=1459540033" target="_blank" class="link-button">
+                                        <i class="fas fa-blog"></i>
+                                        블로그 상위노출 현황
+                                    </a>
+                                </li>
+                                <li class="link-item">
+                                    <a href="https://docs.google.com/spreadsheets/d/1jBy_zts031a3-FmRK1SKOhFHO06Do9YVXXgtyr3eUPo/edit?gid=1900631716#gid=1900631716" target="_blank" class="link-button">
+                                        <i class="fas fa-newspaper"></i>
+                                        파워컨텐츠 현황
+                                    </a>
+                                </li>
+                                <li class="link-item">
                                     <a href="https://docs.google.com/spreadsheets/d/1wjKugvEtwVqVODdETOizJlX9AkbnNU5gbWyece3xj1g/edit?gid=120812532#gid=120812532" target="_blank" class="link-button">
                                         <i class="fab fa-facebook"></i>
-                                        메타 광고소재 바로가기
+                                        메타 광고 현황
                                     </a>
                                 </li>
                                 <li class="link-item">
                                     <a href="#" target="_blank" class="link-button">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        당근마켓 채널 바로가기
+                                        <i class="fas fa-carrot"></i>
+                                        당근마켓 광고 현황
                                     </a>
                                 </li>
                                 <li class="link-item">
                                     <a href="#" target="_blank" class="link-button">
                                         <i class="fab fa-youtube"></i>
-                                        유튜브 채널 바로가기
+                                        유튜브 광고 현황
+                                    </a>
+                                </li>
+                                <li class="link-item">
+                                    <a href="https://docs.google.com/spreadsheets/d/1moZelTqDebX2zvZ1BjzWvdra2J6-QuWEyGqmpppRITQ/edit?gid=1672475223#gid=1672475223" target="_blank" class="link-button">
+                                        <i class="fas fa-chart-pie"></i>
+                                        통합 광고 성과 분석
                                     </a>
                                 </li>
                             </ul>
@@ -1444,7 +1466,146 @@
         </div>
     </div>
 
+    <script src="https://apis.google.com/js/api.js"></script>
     <script>
+        // Google Sheets API 설정
+        const API_KEY = 'YOUR_API_KEY'; // Google Cloud Console에서 발급받은 API 키
+        const SPREADSHEET_ID = '1moZelTqDebX2zvZ1BjzWvdra2J6-QuWEyGqmpppRITQ';
+        const RANGE = 'Sheet1!A1:D50'; // 데이터가 있는 범위
+
+        // Google Sheets API 초기화
+        function initGoogleSheetsAPI() {
+            gapi.client.init({
+                'apiKey': API_KEY,
+                'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+            }).then(function() {
+                // API 로드 완료 후 데이터 가져오기
+                fetchKPIData();
+            }).catch(function(error) {
+                console.error('Error initializing Google Sheets API:', error);
+                // 에러 발생 시 기본값 사용
+                useDefaultData();
+            });
+        }
+
+        // 페이지 로드 시 API 로드
+        gapi.load('client', initGoogleSheetsAPI);
+
+        // 페이지 로드 시 데이터 가져오기
+        document.addEventListener('DOMContentLoaded', function() {
+            // 5분(300,000 밀리초)마다 데이터 새로고침
+            setInterval(fetchKPIData, 300000);
+        });
+
+        // KPI 데이터 가져오기 함수
+        function fetchKPIData() {
+            gapi.client.sheets.spreadsheets.values.get({
+                spreadsheetId: SPREADSHEET_ID,
+                range: RANGE,
+            }).then(function(response) {
+                const data = parseSheetData(response.result.values);
+                updateKPICards(data);
+            }).catch(function(error) {
+                console.error('Error fetching KPI data:', error);
+                useDefaultData();
+            });
+        }
+
+        // 스프레드시트 데이터 파싱 함수
+        function parseSheetData(values) {
+            const data = {};
+            const headers = values[0];
+            
+            // 각 행을 순회하며 데이터 찾기
+            for (let i = 1; i < values.length; i++) {
+                const row = values[i];
+                const rowData = {};
+                
+                // 각 열의 값을 헤더와 매칭
+                headers.forEach((header, index) => {
+                    rowData[header] = row[index] || '';
+                });
+                
+                // 지표명에 따라 데이터 객체에 저장
+                if (rowData['지표명'] === '가맹계약') {
+                    data['가맹계약'] = rowData['현재값'];
+                    data['목표값_가맹계약'] = rowData['목표값'];
+                    data['비고_가맹계약'] = rowData['비고'];
+                } else if (rowData['지표명'] === '예산집행률') {
+                    data['예산집행률'] = rowData['현재값'];
+                    data['비고_예산집행률'] = rowData['비고'];
+                } else if (rowData['지표명'] === '문의건수') {
+                    data['문의건수'] = rowData['현재값'];
+                    data['비고_문의건수'] = rowData['비고'];
+                } else if (rowData['지표명'] === '진행률') {
+                    data['진행률'] = rowData['현재값'];
+                    data['비고_진행률'] = rowData['비고'];
+                }
+            }
+            
+            return data;
+        }
+
+        // 기본값 사용 함수
+        function useDefaultData() {
+            const fallbackData = {
+                '가맹계약': '3',
+                '목표값_가맹계약': '10',
+                '예산집행률': '45',
+                '문의건수': '27',
+                '진행률': '40',
+                '비고_예산집행률': '4,995,000원/11,100,000원',
+                '비고_문의건수': '지난 주 대비 +8%',
+                '비고_진행률': '2025.04 ~ 2025.07'
+            };
+            updateKPICards(fallbackData);
+        }
+
+        // KPI 카드 업데이트 함수
+        function updateKPICards(data) {
+            // 가맹 계약 업데이트
+            if (data['가맹계약']) {
+                document.querySelector('.stat-card.primary .stat-value').textContent = data['가맹계약'];
+                document.querySelector('.stat-card.primary .stat-description').textContent = 
+                    data['비고_가맹계약'] || `목표: ${data['목표값_가맹계약'] || '10'}개 매장`;
+                
+                // 진행률 계산 (목표 대비 현재 값)
+                const contractProgress = (parseInt(data['가맹계약']) / parseInt(data['목표값_가맹계약'] || '10')) * 100;
+                document.querySelector('.stat-card.primary .progress-fill').style.width = `${Math.min(contractProgress, 100)}%`;
+            }
+            
+            // 예산 집행률 업데이트
+            if (data['예산집행률']) {
+                document.querySelector('.stat-card.secondary .stat-value').textContent = `${data['예산집행률']}%`;
+                document.querySelector('.stat-card.secondary .stat-description').textContent = 
+                    data['비고_예산집행률'] || '';
+                document.querySelector('.stat-card.secondary .progress-fill').style.width = `${data['예산집행률']}%`;
+            }
+            
+            // 문의 건수 업데이트
+            if (data['문의건수']) {
+                document.querySelector('.stat-card.accent .stat-value').textContent = data['문의건수'];
+                document.querySelector('.stat-card.accent .stat-description').textContent = 
+                    data['비고_문의건수'] || '';
+                // 문의 건수는 특정 목표가 없으므로 75%로 고정 (또는 다른 로직 적용 가능)
+                document.querySelector('.stat-card.accent .progress-fill').style.width = '75%';
+            }
+            
+            // 프로젝트 진행률 업데이트
+            if (data['진행률']) {
+                document.querySelector('.stat-card.gray .stat-value').textContent = `${data['진행률']}%`;
+                document.querySelector('.stat-card.gray .stat-description').textContent = 
+                    data['비고_진행률'] || '';
+                document.querySelector('.stat-card.gray .progress-fill').style.width = `${data['진행률']}%`;
+            }
+            
+            // 마지막 업데이트 시간 표시
+            const now = new Date();
+            const dateOptions = { year: 'numeric', month: '2-digit', day: '2-digit', weekday: 'long' };
+            document.querySelector('.date-info').textContent = 
+                now.toLocaleDateString('ko-KR', dateOptions) + ' ' + now.toLocaleTimeString('ko-KR', {hour: '2-digit', minute:'2-digit'}) + ' 기준';
+        }
+
         // Tab navigation
         function showTab(tabId) {
             // Hide all tabs
