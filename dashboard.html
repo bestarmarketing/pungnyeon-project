@@ -1692,6 +1692,129 @@
                 event.target.style.display = 'none';
             }
         }
+
+        // 타임라인 데이터 가져오기
+        function fetchTimelineData() {
+            // 웹에 게시된 CSV URL (실제 URL로 교체하세요)
+            const publishedUrl = "여기에_웹에_게시된_URL_입력";
+            
+            fetch(publishedUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(csvData => {
+                    const timelineData = parseTimelineCSV(csvData);
+                    updateAllTimelines(timelineData);
+                })
+                .catch(error => {
+                    console.error('타임라인 데이터 가져오기 오류:', error);
+                    // 오류 시 기본 데이터 사용
+                    const fallbackData = [
+                        {
+                            date: "2025년 4월 14~ 15일",
+                            title: "1단계: 준비 및 설정",
+                            status: "완료",
+                            description: "광고 계정 설정, 키워드 분석, 광고 소재 제작 및 브랜드 채널 최적화 작업을 완료했습니다."
+                        },
+                        {
+                            date: "2025년 4월 3주차",
+                            title: "2단계: 초기 광고 집행",
+                            status: "진행 중",
+                            description: "네이버 광고 집행, 메타 광고 1차 집행, 브랜드 채널 콘텐츠 정기 발행을 진행하고 있습니다."
+                        },
+                        {
+                            date: "2025년 4월 4주차",
+                            title: "3단계: 확장 및 최적화",
+                            status: "예정",
+                            description: "1-2단계 성과 분석, 전략 조정, 고성과 채널 예산 확대, 추가 옵션 검토 및 집행을 진행할 예정입니다."
+                        },
+                        {
+                            date: "2025년 4월 5주차",
+                            title: "4단계: 마무리 및 평가",
+                            status: "예정",
+                            description: "최종 성과 측정 및 분석, 가맹 계약 마무리, 결과 보고서 작성을 진행할 예정입니다."
+                        }
+                    ];
+                    updateAllTimelines(fallbackData);
+                });
+        }
+
+        // CSV 파싱 함수
+        function parseTimelineCSV(csvText) {
+            const lines = csvText.trim().split('\n');
+            const result = [];
+            
+            // 첫 번째 행은 헤더이므로 건너뛰기
+            for (let i = 1; i < lines.length; i++) {
+                const values = lines[i].split(',');
+                if (values.length >= 4) {
+                    result.push({
+                        date: values[0] || '',
+                        title: values[1] || '',
+                        status: values[2] || '',
+                        description: values[3] || ''
+                    });
+                }
+            }
+            
+            return result;
+        }
+
+        // 모든 타임라인 섹션 업데이트
+        function updateAllTimelines(timelineData) {
+            // 대시보드 타임라인 업데이트
+            updateTimelineSection('#dashboard .timeline', timelineData);
+            
+            // 일정관리 타임라인 업데이트 
+            updateTimelineSection('#schedule .timeline', timelineData);
+        }
+
+        // 특정 타임라인 섹션 업데이트
+        function updateTimelineSection(selector, data) {
+            const timelineContainer = document.querySelector(selector);
+            if (!timelineContainer) {
+                console.warn(`타임라인 컨테이너를 찾을 수 없습니다: ${selector}`);
+                return;
+            }
+            
+            let timelineHTML = '';
+            
+            data.forEach(item => {
+                let statusClass = '';
+                if (item.status === '완료') {
+                    statusClass = 'completed';
+                } else if (item.status === '진행 중') {
+                    statusClass = 'current';
+                } else if (item.status === '예정') {
+                    statusClass = 'upcoming';
+                }
+                
+                timelineHTML += `
+                    <div class="timeline-item">
+                        <div class="timeline-dot ${statusClass}"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">${item.date}</div>
+                            <h3 class="timeline-title">${item.title}</h3>
+                            <span class="status-badge ${statusClass}">${item.status}</span>
+                            <p>${item.description}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            timelineContainer.innerHTML = timelineHTML;
+        }
+
+        // 페이지 로드 시 실행
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchTimelineData();
+            
+            // 5분마다 데이터 새로고침
+            setInterval(fetchTimelineData, 300000);
+        });
     </script>
 </body>
 </html>
