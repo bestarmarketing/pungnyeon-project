@@ -1007,7 +1007,7 @@
                 </div>
             </div>
 
-            <!-- Naver Blog Tab -->
+            <!-- Blog Tab -->
             <div id="blog" class="tab-content">
                 <div class="dashboard-header">
                     <h2 class="page-title">네이버 블로그 배포</h2>
@@ -1027,29 +1027,34 @@
                                 공식 블로그 바로 가기
                             </a>
                         </li>
-                        <li class="link-item">
-                            <a href="https://docs.google.com/spreadsheets/d/1ZpEqNSDaPbMbzVcJlG2v-kxcbEbFErg-LqcPNcZfxHU/edit?usp=sharing" target="_blank" class="link-button">
-                                <i class="fas fa-rss"></i>
-                                블로그 배포 현황
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Search Tab -->
+            <div id="search" class="tab-content">
+                <div class="dashboard-header">
+                    <h2 class="page-title">네이버 상위노출 현황</h2>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-search"></i>
+                            검색 노출 현황
                         </h3>
                     </div>
                     <ul class="link-list">
                         <li class="link-item">
-                            <a href="#" target="_blank" class="link-button">
-                                <i class="fas fa-chart-line"></i>
-                                네이버 웹사이트 상위노출 현황
+                            <a href="https://docs.google.com/spreadsheets/d/1_mTHheLd5kEATSEdDwpznahyLNBAoayAxnyjR7uuc7M/edit?usp=sharing" target="_blank" class="link-button">
+                                <i class="fas fa-globe"></i>
+                                웹사이트 상위노출 현황
                             </a>
                         </li>
                         <li class="link-item">
-                            <a href="#" target="_blank" class="link-button">
-                                <i class="fas fa-key"></i>
+                            <a href="https://docs.google.com/spreadsheets/d/1ZpEqNSDaPbMbzVcJlG2v-kxcbEbFErg-LqcPNcZfxHU/edit?gid=1459540033#gid=1459540033" target="_blank" class="link-button">
+                                <i class="fas fa-blog"></i>
                                 블로그 상위노출 현황
-                            </a>
-                        </li>
-                        <li class="link-item">
-                            <a href="#" target="_blank" class="link-button">
-                                <i class="fas fa-ad"></i>
-                                파워링크 광고 관리
                             </a>
                         </li>
                     </ul>
@@ -1360,36 +1365,6 @@
                     </ul>
                 </div>
             </div>
-
-            <!-- Search Tab -->
-            <div id="search" class="tab-content">
-                <div class="dashboard-header">
-                    <h2 class="page-title">네이버 상위노출 현황</h2>
-                </div>
-                
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">
-                            <i class="fas fa-search"></i>
-                            검색 노출 현황
-                        </h3>
-                    </div>
-                    <ul class="link-list">
-                        <li class="link-item">
-                            <a href="https://docs.google.com/spreadsheets/d/1_mTHheLd5kEATSEdDwpznahyLNBAoayAxnyjR7uuc7M/edit?usp=sharing" target="_blank" class="link-button">
-                                <i class="fas fa-globe"></i>
-                                웹사이트 상위노출 현황
-                            </a>
-                        </li>
-                        <li class="link-item">
-                            <a href="https://docs.google.com/spreadsheets/d/1ZpEqNSDaPbMbzVcJlG2v-kxcbEbFErg-LqcPNcZfxHU/edit?gid=1459540033#gid=1459540033" target="_blank" class="link-button">
-                                <i class="fas fa-blog"></i>
-                                블로그 상위노출 현황
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </main>
     </div>
 
@@ -1446,7 +1421,7 @@
         // Tab navigation
         function showTab(tabId) {
             // Hide all tabs
-            const tabContents = document.querySelectorAll('.content .tab-content');
+            const tabContents = document.querySelectorAll('.tab-content');
             tabContents.forEach(tab => {
                 tab.classList.remove('active');
             });
@@ -1458,9 +1433,10 @@
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
                 link.classList.remove('active');
+                if(link.getAttribute('onclick').includes(tabId)) {
+                    link.classList.add('active');
+                }
             });
-            
-            event.currentTarget.classList.add('active');
         }
         
         // Inner tabs
