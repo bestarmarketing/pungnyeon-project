@@ -16,7 +16,7 @@
         }
         
         h2 {
-            margin-top: 60px; /* h2 앞에 여백 추가 */
+            margin-top: 100px; /* h2 앞에 여백 추가 */
             color: #0288d1;
             border-bottom: 2px solid #0288d1;
             padding-bottom: 5px;
