@@ -89,15 +89,24 @@
             margin-bottom: 20px;
         }
         
+        /* h2 태그 스타일 수정: 위쪽 여백 추가 */
         h2 {
             color: #0288d1;
             border-bottom: 2px solid #0288d1;
             padding-bottom: 5px;
-            margin-top: 40px;
+            margin-top: 60px; /* 여백 크기 증가 */
+            padding-top: 30px; /* 추가 패딩 */
+            clear: both; /* 이전 요소와의 관계 명확화 */
+        }
+        
+        /* 특별히 섹션 시작 부분의 h2를 위한 추가 스타일 */
+        h2[id] {
+            scroll-margin-top: 80px; /* 네비게이션 메뉴가 섹션 제목을 가리지 않도록 스크롤 조정 */
         }
         
         h3 {
             color: #388e3c;
+            margin-top: 30px; /* h3 태그도 여백 추가 */
         }
         
         table {
@@ -158,6 +167,12 @@
             margin: 40px 0;
         }
         
+        /* 섹션 구분을 위한 여백 */
+        .section-spacer {
+            height: 60px;
+            clear: both;
+        }
+        
         /* 모바일 반응형 스타일 */
         @media screen and (max-width: 768px) {
             .navbar ul {
@@ -166,6 +181,16 @@
             
             .team-section {
                 flex-direction: column;
+            }
+            
+            /* 모바일에서 여백 조정 */
+            h2 {
+                margin-top: 40px;
+                padding-top: 20px;
+            }
+            
+            .section-spacer {
+                height: 40px;
             }
         }
     </style>
@@ -331,7 +356,7 @@
         </table>
         
         <p>※ <a href="dashboard.html">대시보드</a>에서 각 광고 소재별 상세 내용 및 실제 이미지를 확인할 수 있습니다.</p>
-<div style="height: 60px;"></div>
+
         <h2 id="brand">3. 브랜드 채널 관리</h2>
         <p>브랜드 채널 운영 예산: <strong>1,000,000원</strong> (총 예산의 9%)</p>
         
@@ -356,7 +381,7 @@
             <li><strong>인스타그램:</strong> 비주얼 중심의 메뉴 사진, 매장 분위기, 고객 후기</li>
             <li><strong>유튜브:</strong> 점주 인터뷰, 매장 투어, 조리 과정 소개</li>
         </ul>
-<div style="height: 60px;"></div>
+
         <h2 id="options">4. 추가 선택 옵션</h2>
         <p>필요에 따라 추가할 수 있는 선택 옵션입니다.</p>
         
@@ -365,7 +390,7 @@
             <li><strong>구글-GDN배너광고:</strong> 구글 디스플레이 네트워크를 통한 배너 광고</li>
             <li><strong>마이포차 광고-프랜차이즈 플랫폼:</strong> 프랜차이즈 전문 플랫폼 내 광고 집행</li>
         </ul>
-<div style="height: 60px;"></div>
+
         <h2 id="budget">5. 통합 예산 관리</h2>
         <p>전체 광고 예산 배분 및 집행 계획입니다.</p>
         
@@ -396,7 +421,7 @@
                 <td><strong>100%</strong></td>
             </tr>
         </table>
-<div style="height: 60px;"></div>
+
         <h2 id="media-status">매체별 광고 현황</h2>
         <h3>성과 지표</h3>
         <p>각 매체별 광고 집행 현황 및 성과 지표입니다.</p>
@@ -460,7 +485,7 @@
         
         <p><strong>※ 용어 설명:</strong> CTR(클릭률), CPA(전환당 비용)</p>
         <p>더 자세한 성과 대시보드와 실시간 지표는 <a href="dashboard.html">대시보드</a>에서 확인할 수 있습니다.</p>
-<div style="height: 60px;"></div>
+
         <h2 id="schedule">6. 프로젝트 일정</h2>
         <p>4개월 간의 프로젝트 진행 일정입니다.</p>
         
@@ -501,7 +526,7 @@
                 </ul>
             </div>
         </div>
-<div style="height: 60px;"></div>
+
         <h2 id="team">7. 프로젝트 팀</h2>
         <p>프로젝트를 진행할 핵심 팀원입니다.</p>
         
@@ -556,9 +581,11 @@
                 
                 navLinks.forEach(link => {
                     link.classList.remove('active');
-                    if(link.getAttribute('href') === `#${current}`) {
+                    const href = link.getAttribute('href');
+                    
+                    if(href === `#${current}`) {
                         link.classList.add('active');
-                    } else if(link.getAttribute('href') === 'index.html' && current === '') {
+                    } else if(href === 'index.html' && current === '') {
                         link.classList.add('active');
                     }
                 });
