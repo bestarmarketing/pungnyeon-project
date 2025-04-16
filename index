@@ -303,27 +303,27 @@
         
         <div class="team-section">
             <div class="team-member">
-                <h3>프로젝트 매니저</h3>
-                <p><strong>담당:</strong> 전체 프로젝트 관리 및 조율</p>
-                <p><strong>연락처:</strong> pm@example.com</p>
+                <h3>전체 프로젝트 관리 및 조율</h3>
+                <p><strong>담당:</strong> 황수한</p>
+                <p><strong>연락처:</strong> 010-7611-9090</p>
             </div>
             
             <div class="team-member">
-                <h3>디지털 마케팅 스페셜리스트</h3>
-                <p><strong>담당:</strong> 광고 집행 및 최적화</p>
-                <p><strong>연락처:</strong> marketing@example.com</p>
+                <h3>영상 제작 및 편집</h3>
+                <p><strong>담당:</strong> 김민지</p>
+                <p><strong>연락처:</strong> 010-2548-9398</p>
             </div>
             
             <div class="team-member">
                 <h3>콘텐츠 크리에이터</h3>
-                <p><strong>담당:</strong> 광고 소재 및 채널 콘텐츠 제작</p>
-                <p><strong>연락처:</strong> content@example.com</p>
+                <p><strong>담당:</strong> 조현진</p>
+                <p><strong>연락처:</strong> 010-7673-8441</p>
             </div>
             
             <div class="team-member">
                 <h3>데이터 애널리스트</h3>
-                <p><strong>담당:</strong> 성과 측정 및 데이터 분석</p>
-                <p><strong>연락처:</strong> data@example.com</p>
+                <p><strong>담당:</strong> 이재민</p>
+                <p><strong>연락처:</strong> 010-2783-0598</p>
             </div>
         </div>
     </div>
