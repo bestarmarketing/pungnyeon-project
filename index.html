@@ -44,7 +44,11 @@
             color: #0288d1;
             border-bottom: 2px solid #0288d1;
             padding-bottom: 5px;
-            margin-top: 40px;
+            margin-top: 60px;
+            clear: both;
+        }
+        h2[id] {
+            scroll-margin-top: 80px; /* 네비게이션 메뉴가 섹션 제목을 가리지 않도록 스크롤 조정 */
         }
         h3 {
             color: #388e3c;
@@ -166,6 +170,50 @@
             border-top: 1px solid #ddd;
             color: #666;
         }
+        /* 상단 네비게이션 메뉴 스타일 */
+        .navbar {
+            background-color: #d32f2f;
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+        
+        .navbar li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .navbar a:hover {
+            background-color: #b71c1c;
+            color: white;
+        }
+        
+        .navbar a.active {
+            background-color: #9a0007;
+        }
+        
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
@@ -176,10 +224,43 @@
             .team-member, .stat-card {
                 min-width: auto;
             }
+            .navbar ul {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <style>
+        /* 버튼 스타일 */
+        .dash-btn {
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .dash-btn:hover {
+            background-color: #005b9f;
         }
     </style>
 </head>
 <body>
+    <!-- 상단 네비게이션 메뉴 추가 -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html" class="active">프로젝트 개요</a></li>
+            <li><a href="#media-contents">매체별 광고 소재</a></li>
+            <li><a href="#media-status">매체별 광고 현황</a></li>
+            <li><a href="dashboard.html">대시보드</a></li>
+        </ul>
+    </nav>
+    
     <div class="container">
         <header>
             <div class="logo">풍년식당1979</div>
@@ -192,6 +273,10 @@
             <p><strong>총 예산:</strong> 11,100,000원 (VAT 미포함)</p>
             <p><strong>프로젝트 기간:</strong> 2025년 4월 ~ 2025년 7월 (4개월)</p>
             <p><strong>목표:</strong> <span class="highlight">선착순 10개 매장 계약 달성</span></p>
+            
+            <div style="text-align: right;">
+                <a href="dashboard.html" class="dash-btn">대시보드 바로가기 →</a>
+            </div>
         </div>
 
         <div class="stats-section">
@@ -222,8 +307,10 @@
             <ol>
                 <li><a href="#naver">네이버 광고 예산 관리</a></li>
                 <li><a href="#meta">메타/소셜 미디어 광고</a></li>
+                <li><a href="#media-contents">매체별 광고 소재</a></li>
                 <li><a href="#brand">브랜드 채널 관리</a></li>
                 <li><a href="#options">추가 선택 옵션</a></li>
+                <li><a href="#media-status">매체별 광고 현황</a></li>
                 <li><a href="#budget">통합 예산 관리</a></li>
                 <li><a href="#schedule">프로젝트 일정</a></li>
                 <li><a href="#team">프로젝트 팀</a></li>
@@ -309,6 +396,45 @@
             <li><strong>주요 타겟층 2:</strong> 기존 자영업자 (업종 변경 고려자)</li>
             <li><strong>지역 타겟팅:</strong> 서울, 경기 주요 상권 중심</li>
         </ul>
+        
+        <h2 id="media-contents">매체별 광고 소재</h2>
+        <h3>광고 소재 현황</h3>
+        <p>각 매체별로 제작된 주요 광고 소재 목록입니다.</p>
+        
+        <table>
+            <tr>
+                <th>매체</th>
+                <th>광고 소재 유형</th>
+                <th>소재 수량</th>
+                <th>최근 업데이트</th>
+            </tr>
+            <tr>
+                <td>네이버</td>
+                <td>배너, 파워컨텐츠, 파워링크</td>
+                <td>12건</td>
+                <td>2025.04.15</td>
+            </tr>
+            <tr>
+                <td>메타(페이스북/인스타그램)</td>
+                <td>이미지 광고, 동영상 광고</td>
+                <td>15건</td>
+                <td>2025.04.15</td>
+            </tr>
+            <tr>
+                <td>유튜브</td>
+                <td>쇼츠, 인스트림 광고</td>
+                <td>5건</td>
+                <td>2025.04.15</td>
+            </tr>
+            <tr>
+                <td>당근마켓</td>
+                <td>배너 광고, 피드 광고</td>
+                <td>8건</td>
+                <td>2025.04.15</td>
+            </tr>
+        </table>
+        
+        <p>※ <a href="dashboard.html">대시보드</a>에서 각 광고 소재별 상세 내용 및 실제 이미지를 확인할 수 있습니다.</p>
 
         <h2 id="brand">3. 브랜드 채널 관리</h2>
         <p>브랜드 채널 운영 예산: <strong>1,000,000원</strong> (총 예산의 9%)</p>
@@ -343,6 +469,70 @@
             <li><strong>구글-GDN배너광고:</strong> 구글 디스플레이 네트워크를 통한 배너 광고</li>
             <li><strong>마이포차 광고-프랜차이즈 플랫폼:</strong> 프랜차이즈 전문 플랫폼 내 광고 집행</li>
         </ul>
+
+        <h2 id="media-status">매체별 광고 현황</h2>
+        <h3>성과 지표</h3>
+        <p>각 매체별 광고 집행 현황 및 성과 지표입니다.</p>
+        
+        <table>
+            <tr>
+                <th>매체</th>
+                <th>노출 수</th>
+                <th>클릭 수</th>
+                <th>CTR</th>
+                <th>전환 수</th>
+                <th>CPA</th>
+                <th>진행 상태</th>
+            </tr>
+            <tr>
+                <td>네이버 검색광고</td>
+                <td>45,230</td>
+                <td>1,850</td>
+                <td>4.09%</td>
+                <td>37</td>
+                <td>75,675원</td>
+                <td>진행중</td>
+            </tr>
+            <tr>
+                <td>네이버 파워컨텐츠</td>
+                <td>12,500</td>
+                <td>850</td>
+                <td>6.80%</td>
+                <td>22</td>
+                <td>27,273원</td>
+                <td>진행중</td>
+            </tr>
+            <tr>
+                <td>메타 광고</td>
+                <td>78,600</td>
+                <td>2,200</td>
+                <td>2.80%</td>
+                <td>28</td>
+                <td>107,143원</td>
+                <td>진행중</td>
+            </tr>
+            <tr>
+                <td>유튜브 광고</td>
+                <td>18,500</td>
+                <td>580</td>
+                <td>3.14%</td>
+                <td>7</td>
+                <td>71,429원</td>
+                <td>진행중</td>
+            </tr>
+            <tr>
+                <td>당근마켓 광고</td>
+                <td>15,300</td>
+                <td>980</td>
+                <td>6.41%</td>
+                <td>19</td>
+                <td>52,632원</td>
+                <td>진행중</td>
+            </tr>
+        </table>
+        
+        <p><strong>※ 용어 설명:</strong> CTR(클릭률), CPA(전환당 비용)</p>
+        <p>더 자세한 성과 대시보드와 실시간 지표는 <a href="dashboard.html">대시보드</a>에서 확인할 수 있습니다.</p>
 
         <h2 id="budget">5. 통합 예산 관리</h2>
         <p>전체 광고 예산 배분 및 집행 계획입니다.</p>
@@ -445,9 +635,45 @@
             </div>
         </div>
 
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="dashboard.html" class="dash-btn">대시보드로 이동하기</a>
+        </div>
+        
         <footer>
             <p>© 2025 풍년식당1979 | 마지막 업데이트: 2025년 4월 16일</p>
         </footer>
     </div>
+
+    <script>
+        // 현재 활성 섹션에 따라 네비게이션 메뉴 활성화 처리
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('h2[id]');
+            const navLinks = document.querySelectorAll('.navbar a');
+            
+            // 스크롤 이벤트 처리
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if(pageYOffset >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const href = link.getAttribute('href');
+                    
+                    if(href === `#${current}`) {
+                        link.classList.add('active');
+                    } else if(href === 'index.html' && current === '') {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
