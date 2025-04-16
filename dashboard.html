@@ -934,7 +934,7 @@
                                     </a>
                                 </li>
                                 <li class="link-item">
-                                    <a href="https://docs.google.com/spreadsheets/d/1NjrV7v01aSs5lzY41-iMoaWedFznRcIRlizsnz79aq0/edit?gid=1025869561#gid=1025869561" target="_blank" class="link-button">
+                                    <a href="https://docs.google.com/spreadsheets/d/1jtFAV75aMHCV_jVl_YbLLK4n-kVnK0koPE2pS6nBN60/edit?gid=0#gid=0" target="_blank" class="link-button">
                                         <i class="fas fa-file-code"></i>
                                         타이틀태그/메타디스크립션
                                     </a>
@@ -1087,6 +1087,12 @@
                                         블로그 상위노출 현황 보고서
                                     </a>
                                 </li>
+                                <li class="link-item">
+                                    <a href="https://docs.google.com/document/d/1uQZQUBFwNRTQJZcs1afs2riEsEi7aGTPOvJvtP2XQ04/edit?usp=sharing" target="_blank" class="link-button">
+                                        <i class="fas fa-file-alt"></i>
+                                        블로그 작성 가이드
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -1169,35 +1175,6 @@
                             <a href="#" target="_blank" class="link-button">
                                 <i class="fas fa-comment-dots"></i>
                                 당근마켓 고객 상담 현황
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Social Media Tab -->
-            <div id="social" class="tab-content">
-                <div class="dashboard-header">
-                    <h2 class="page-title">소셜 미디어</h2>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">
-                            <i class="fas fa-share-alt"></i>
-                            소셜 미디어 현황
-                        </h3>
-                    </div>
-                    <ul class="link-list">
-                        <li class="link-item">
-                            <a href="https://www.instagram.com/pungnyeon_official" target="_blank" class="link-button">
-                                <i class="fab fa-instagram"></i>
-                                인스타그램 바로가기
-                            </a>
-                        </li>
-                        <li class="link-item">
-                            <a href="#" target="_blank" class="link-button">
-                                <i class="fab fa-youtube"></i>
-                                유튜브 채널 바로가기
                             </a>
                         </li>
                     </ul>
@@ -1385,36 +1362,30 @@
                 </div>
             </div>
 
-            <!-- Settings Tab -->
-            <div id="settings" class="tab-content">
+            <!-- 회의록 탭 -->
+            <div id="meeting" class="tab-content">
                 <div class="dashboard-header">
-                    <h2 class="page-title">설정</h2>
+                    <h2 class="page-title">풍년식당 회의록</h2>
                 </div>
                 
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">
-                            <i class="fas fa-cog"></i>
-                            사용자 설정
+                            <i class="fas fa-file-alt"></i>
+                            회의록 관리
                         </h3>
                     </div>
                     <ul class="link-list">
                         <li class="link-item">
-                            <a href="#" class="link-button" onclick="openModal('profileModal')">
-                                <i class="fas fa-user-edit"></i>
-                                프로필 설정
+                            <a href="https://docs.google.com/document/d/1qJwA7BzKJ3HhT5kSqZv2sLhU-F8nYzkzTgfM8rbOcbw/edit" target="_blank" class="link-button">
+                                <i class="fas fa-file-alt"></i>
+                                마케팅 회의록 바로가기
                             </a>
                         </li>
                         <li class="link-item">
-                            <a href="#" class="link-button" onclick="openModal('notificationModal')">
-                                <i class="fas fa-bell"></i>
-                                알림 설정
-                            </a>
-                        </li>
-                        <li class="link-item">
-                            <a href="#" class="link-button" onclick="openModal('teamModal')">
-                                <i class="fas fa-users"></i>
-                                팀 관리
+                            <a href="#" target="_blank" class="link-button">
+                                <i class="fas fa-calendar-alt"></i>
+                                예정된 회의 일정
                             </a>
                         </li>
                     </ul>
@@ -1662,13 +1633,23 @@
             });
             
             // Show selected tab
-            document.getElementById(tabId).classList.add('active');
+            const selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            } else {
+                // 만약 선택된 탭이 없으면 대시보드 탭을 보여줌
+                const dashboardTab = document.getElementById('dashboard');
+                if (dashboardTab) {
+                    dashboardTab.classList.add('active');
+                }
+                console.log(`경고: '${tabId}' ID를 가진 탭을 찾을 수 없습니다.`);
+            }
             
             // Update active nav link
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if(link.getAttribute('onclick').includes(tabId)) {
+                if (link.getAttribute('onclick') && link.getAttribute('onclick').includes(tabId)) {
                     link.classList.add('active');
                 }
             });
@@ -1680,15 +1661,19 @@
                 brandTabs.forEach(tab => {
                     tab.classList.remove('active');
                 });
-                document.getElementById('official').classList.add('active');
                 
-                // 탭 버튼 활성화
-                const brandTabButtons = document.querySelectorAll('#brand .tab-button');
-                brandTabButtons.forEach(button => {
-                    button.classList.remove('active');
-                });
-                // 첫 번째 탭 버튼(공식 홈페이지) 활성화
-                brandTabButtons[0].classList.add('active');
+                const officialTab = document.getElementById('official');
+                if (officialTab) {
+                    officialTab.classList.add('active');
+                    
+                    // 탭 버튼 활성화
+                    const brandTabButtons = document.querySelectorAll('#brand .tab-button');
+                    brandTabButtons.forEach(button => {
+                        button.classList.remove('active');
+                    });
+                    // 첫 번째 탭 버튼(공식 홈페이지) 활성화
+                    brandTabButtons[0].classList.add('active');
+                }
             }
             else if(tabId === 'search') {
                 // 네이버 상위노출 현황에서 '웹사이트 상위노출' 탭 활성화
@@ -1696,97 +1681,18 @@
                 searchTabs.forEach(tab => {
                     tab.classList.remove('active');
                 });
-                document.getElementById('website').classList.add('active');
                 
-                // 탭 버튼 활성화
-                const searchTabButtons = document.querySelectorAll('#search .tab-button');
-                searchTabButtons.forEach(button => {
-                    button.classList.remove('active');
-                });
-                // 첫 번째 탭 버튼(웹사이트 상위노출) 활성화
-                searchTabButtons[0].classList.add('active');
+                const websiteTab = document.getElementById('website');
+                if (websiteTab) {
+                    websiteTab.classList.add('active');
+                    
+                    // 탭 버튼 활성화
+                    const searchTabButtons = document.querySelectorAll('#search .tab-button');
+                    searchTabButtons.forEach(button => {
+                        button.classList.remove('active');
+                    });
+                    // 첫 번째 탭 버튼(웹사이트 상위노출) 활성화
+                    searchTabButtons[0].classList.add('active');
+                }
             }
         }
-        
-        // Inner tabs
-        function openInnerTab(evt, tabId) {
-            const tabContent = evt.currentTarget.closest('.tab-container').querySelectorAll('.tab-content');
-            tabContent.forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            const tabButtons = evt.currentTarget.closest('.tab-buttons').querySelectorAll('.tab-button');
-            tabButtons.forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            document.getElementById(tabId).classList.add('active');
-            evt.currentTarget.classList.add('active');
-        }
-        
-        // Modal functions
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
-        }
-        
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-        
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal-overlay')) {
-                event.target.style.display = 'none';
-            }
-        }
-
-        // 간편 의견 보내기 관련 함수
-        function openFeedbackForm() {
-            document.getElementById('feedbackModal').style.display = 'flex';
-            document.getElementById('feedbackMessage').style.display = 'none';
-            document.getElementById('feedbackForm').reset();
-        }
-
-        function closeFeedbackModal() {
-            document.getElementById('feedbackModal').style.display = 'none';
-        }
-
-        function submitFeedback(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById('feedbackName').value;
-            const content = document.getElementById('feedbackContent').value;
-            
-            if (!name || !content) {
-                alert('성함과 의견을 모두 입력해주세요.');
-                return;
-            }
-            
-            // 이메일 전송 형식 준비
-            const emailSubject = `[풍년식당 대시보드 의견] ${name}님의 의견`;
-            const emailBody = `
-보낸 사람: ${name}
-
-${content}
-
----
-풍년식당1979 가맹 광고 프로젝트 대시보드에서 전송됨
-            `.trim();
-            
-            // mailto 링크 생성
-            const mailtoLink = `mailto:bestarmarketingworks@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-            
-            // 이메일 클라이언트 열기
-            window.location.href = mailtoLink;
-            
-            // 성공 메시지 표시
-            document.getElementById('feedbackMessage').style.display = 'block';
-            
-            // 3초 후 폼 닫기
-            setTimeout(function() {
-                closeFeedbackModal();
-            }, 3000);
-        }
-    </script>
-</body>
-</html>
